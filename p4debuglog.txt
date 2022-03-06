@@ -1,1 +1,203 @@
+ gcc -g p4final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x942: file p4final.c, line 77.
+(gdb) r
+Starting program: /home/runner/Test3Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p4final.c:77
+77  {
+(gdb) n
+80    a=input_degree();
+(gdb) s
+ gcc -g p4final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x942: file p4final.c, line 77.
+(gdb) r
+Starting program: /home/runner/Test3Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p4final.c:77
+77  {
+(gdb) n
+80    a=input_degree();
+(gdb) s
+input_degree () at p4final.c:3
+3   {
+(gdb) n
+5     printf("Enter the degree of polynomial equation\n");
+(gdb) n
+Enter the degree of polynomial equation
+6     scanf("%d",&n);
+(gdb) n
+ gcc -g p4final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0xa3a: file p4final.c, line 51.
+(gdb) r
+Starting program: /home/runner/Test3Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p4final.c:51
+51  {
+(gdb) n
+54    a=input_degree();
+(gdb) s
+input_degree () at p4final.c:3
+3   {
+(gdb) s
+5     printf("Enter the degree of polynomial equation\n");
+(gdb) n
+Enter the degree of polynomial equation
+6     scanf("%d",&n);
+(gdb) n
+2
+7     return n;
+(gdb) p n
+$1 = 2
+(gdb) n
+8   }
+(gdb) n
+main () at p4final.c:55
+55    b=input_x();
+(gdb) s
+input_x () at p4final.c:10
+10  {
+(gdb) n
+12    printf("enter the value of x\n");
+(gdb) n
+enter the value of x
+13    scanf("%f",&x);
+(gdb) n
+1
+14    return x;
+(gdb) p 
+$2 = 2
+(gdb) p x
+$3 = 1
+(gdb) n
+15  }
+(gdb) n
+main () at p4final.c:56
+56    float c[a+1];
+(gdb) n
+57    input_coefficients(a,c);
+(gdb) s
+input_coefficients (n=2, a=0x7ffd2cdb0050) at p4final.c:18
+18    printf("Enter the coefficients\n");
+(gdb) n
+Enter the coefficients
+19    for(int i=0;i<n+1;i++)
+(gdb) n
+21        scanf("%f",&a[i]);
+(gdb) n
+1
+19    for(int i=0;i<n+1;i++)
+(gdb) n
+21        scanf("%f",&a[i]);
+(gdb) n
+1
+19    for(int i=0;i<n+1;i++)
+(gdb) n
+21        scanf("%f",&a[i]);
+(gdb) n
+1
+19    for(int i=0;i<n+1;i++)
+(gdb) n
+23  }
+(gdb) p*a@3
+$4 = {1, 1, 1}
+(gdb) n
+main () at p4final.c:58
+58    sum=evaluate_polynomial(a,c,b);
+(gdb) s
+evaluate_polynomial (n=2, a=0x7ffd2cdb0050, x=1) at p4final.c:27
+27    int result=1;
+(gdb) n
+29    z=x*(a[0]*x+a[1])+a[2];
+(gdb) n
+30    while( i=3)
+(gdb) p z
+$5 = 3
+(gdb) n
+32        result=result*(z*x+a[i]);
+(gdb) n
+33        break;
+(gdb) p result
+$6 = 3
+(gdb) n
+35    for (int i=4;i<n+1;i++)
+(gdb) n
+39    return result;
+(gdb) p result
+$7 = 3
+(gdb) n
+40  }
+(gdb) n
+main () at p4final.c:59
+59    out_put(a,c,b,sum);
+(gdb) s
+out_put (n=2, a=0x7ffd2cdb0050, x=1, result=3) at p4final.c:43
+43    printf("%f + %f*x +",a[n],a[n-1]);
+(gdb) n
+44    for(int i=n-2;i>0;i--)
+(gdb) n
+48    printf("%f*x^%d at %f is %f",a[0],n,x,result);
+(gdb) n
+49  }
+(gdb) n
+main () at p4final.c:60
+60      return 0;
+(gdb) n
+61  }
+(gdb) c
+Continuing.
+1.000000 + 1.000000*x +1.000000*x^2 at 1.000000 is 3.000000[Inferior 1 (process 1882) exited normally]
+(gdb) 

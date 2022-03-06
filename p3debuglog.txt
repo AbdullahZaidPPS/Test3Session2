@@ -1,1 +1,131 @@
+gcc -g p3final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x87d: file p3final.c, line 36.
+(gdb) r
+Starting program: /home/runner/Test3Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p3final.c:36
+36  {
+(gdb) n
+38    input_n_and_r(&x,&y);
+(gdb) s
+input_n_and_r (n=0x7ffe530dfe7c, r=0x7ffe530dfe80) at p3final.c:4
+4     printf("Enter n\n");
+(gdb) n
+Enter n
+5     scanf("%d",n);
+(gdb) n
+10
+6     printf("Enter r\n");
+(gdb) p *n
+$1 = 10
+(gdb) n
+Enter r
+7     scanf("%d",r);
+(gdb) n
+4
+9   }
+(gdb) p *r
+$2 = 4
+(gdb) n
+main () at p3final.c:39
+39    z=ncr(x,y);
+(gdb) s
+ncr (n=10, r=4) at p3final.c:13
+13    int n1=1;
+(gdb) n
+14    int n2=1;
+(gdb) n
+15    for(int i=n;i>r;i--)
+(gdb) n
+17        n1=n1*i;
+(gdb) n
+15    for(int i=n;i>r;i--)
+(gdb) n
+17        n1=n1*i;
+(gdb) n
+15    for(int i=n;i>r;i--)
+(gdb) n
+17        n1=n1*i;
+(gdb) n
+15    for(int i=n;i>r;i--)
+(gdb) n
+17        n1=n1*i;
+(gdb) n
+15    for(int i=n;i>r;i--)
+(gdb) n
+17        n1=n1*i;
+(gdb) n
+15    for(int i=n;i>r;i--)
+(gdb) n
+17        n1=n1*i;
+(gdb) n
+15    for(int i=n;i>r;i--)
+(gdb) n
+19    for(int j=n-r;j>1;j--)
+(gdb) n
+21        n2=n2*j;
+(gdb) n
+19    for(int j=n-r;j>1;j--)
+(gdb) n
+21        n2=n2*j;
+(gdb) n
+19    for(int j=n-r;j>1;j--)
+(gdb) n
+21        n2=n2*j;
+(gdb) n
+19    for(int j=n-r;j>1;j--)
+(gdb) n
+21        n2=n2*j;
+(gdb) n
+19    for(int j=n-r;j>1;j--)
+(gdb) n
+21        n2=n2*j;
+(gdb) n
+19    for(int j=n-r;j>1;j--)
+(gdb) n
+23    result=n1/n2;
+(gdb) n
+24    return result;
+(gdb) p result
+$3 = 210
+(gdb) n
+25  }
+(gdb) n
+main () at p3final.c:40
+40    output(x,y,z);
+(gdb) s
+output (n=10, r=4, result=210) at p3final.c:28
+28    if(r>n)
+(gdb) n
+32    if(n>r)
+(gdb) n
+33    printf("%d c %d is %d",n,r,result);
+(gdb) n
+34  }
+(gdb) n
+main () at p3final.c:41
+41    return 0;
+(gdb) n
+42  }(gdb) c
+Continuing.
+10 c 4 is 210[Inferior 1 (process 213) exited normally]
+(gdb) q
+ 
